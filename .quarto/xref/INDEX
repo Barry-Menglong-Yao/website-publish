@@ -31,5 +31,11 @@
   },
   "posts/1probability/post1.qmd": {
     "post1.html": "70a3353a"
+  },
+  "posts/1probability/post1_example.qmd": {
+    "post1_example.html": "dddd09bb"
+  },
+  "posts/1probability/index.ipynb": {
+    "index.html": "ad4c6c2c"
   }
 }

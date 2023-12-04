@@ -2,8 +2,6 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/1probability/post.html",
-      "/posts/1probability/post1.html",
       "/posts/5detection/index.html",
       "/posts/4classification/index.html",
       "/posts/3linear/index.html",
