@@ -25,5 +25,11 @@
   },
   "posts/5detection/index.qmd": {
     "index.html": "6e8f55ea"
+  },
+  "posts/1probability/post.ipynb": {
+    "post.html": "fcc49203"
+  },
+  "posts/1probability/post1.qmd": {
+    "post1.html": "70a3353a"
   }
 }
