@@ -1,5 +1,5 @@
 ---
-title: Linear and nonlinear regression
+title: Classification
 author: Barry Menglong Yao
 date: '2023-11-29'
 format:
