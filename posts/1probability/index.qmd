@@ -21,9 +21,11 @@ A random variable is a variable whose value is unknown or a function that assign
 Let’s take an example of the coin flips. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. 
 So now we flip our coin 100 times, and we want to answer some questions. What is the probability of getting heads over these 100 times? Will the probability change when we flip from 1 time to 100 times?
 
+
 ```{python}
 #| label: fig-coin
 #| fig-cap: flip coins
+
 import numpy as np
 import matplotlib.pyplot as plt
 
