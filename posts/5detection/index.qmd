@@ -80,3 +80,4 @@ plt.ylim((0,6000))
 plt.legend()
 ```
 
+The red part shows the detected anomalies data points around every age group.

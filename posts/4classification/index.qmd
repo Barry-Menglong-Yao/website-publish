@@ -16,8 +16,11 @@ jupyter: python3
 Random forests are a popular supervised machine learning algorithm.
 
 Random forests are for supervised machine learning, where there is a labeled target variable.
+
 Random forests can be used for solving regression (numeric target variable) and classification (categorical target variable) problems.
+
 Random forests are an ensemble method, meaning they combine predictions from other models.
+
 Each of the smaller models in the random forest ensemble is a decision tree.
 
 Imagine you have a complex problem to solve, and you gather a group of experts from different fields to provide their input. Each expert provides their opinion based on their expertise and experience. Then, the experts would vote to arrive at a final decision.
@@ -25,14 +28,19 @@ Imagine you have a complex problem to solve, and you gather a group of experts f
 In a random forest classification, multiple decision trees are created using different random subsets of the data and features. Each decision tree is like an expert, providing its opinion on how to classify the data. Predictions are made by calculating the prediction for each decision tree, then taking the most popular result. (For regression, predictions use an averaging technique instead.)
 
 The Dataset:
+
 This dataset consists of direct marketing campaigns by a Portuguese banking institution using phone calls. The campaigns aimed to sell subscriptions to a bank term deposit. We are going to store this dataset in a variable called bank_data.
 
 The columns we will use are:
 
 age: The age of the person who received the phone call
+
 default: Whether the person has credit in default
+
 cons.price.idx: Consumer price index score at the time of the call
+
 cons.conf.idx:Consumer confidence index score at the time of the call
+
 y: Whether the person subscribed (this is what we’re trying to predict)
 
 ```{python}
@@ -81,13 +89,16 @@ cm = confusion_matrix(y_test, y_pred)
 ConfusionMatrixDisplay(confusion_matrix=cm).plot()
 ```
 
-LinearRegression fits a linear model with coefficients w = (w1, …, wp) to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.
+Logistic regression is a process of modeling the probability of a discrete outcome given an input variable. The most common logistic regression models a binary outcome; something that can take two values such as true/false, yes/no, and so on. Multinomial logistic regression can model scenarios where there are more than two possible discrete outcomes. Logistic regression is a useful analysis method for classification problems, where you are trying to determine if a new sample fits best into a category. As aspects of cyber security are classification problems, such as attack detection, logistic regression is a useful analytic technique.
 
 ```{python}
 #| vscode: {languageId: python}
-lm=sklearn.linear_model.LinearRegression()
-rf.fit(X_train, y_train)
-y_pred = rf.predict(X_test)
+from sklearn.linear_model import LogisticRegression
+
+# all parameters not specified are set to their defaults
+logisticRegr = LogisticRegression()
+logisticRegr.fit(X_train, y_train)
+y_pred = logisticRegr.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 # Create the confusion matrix
@@ -95,3 +106,4 @@ cm = confusion_matrix(y_test, y_pred)
 ConfusionMatrixDisplay(confusion_matrix=cm).plot()
 ```
 
+The results show that both LogisticRegression and Random forests can reach a good accuracy. 

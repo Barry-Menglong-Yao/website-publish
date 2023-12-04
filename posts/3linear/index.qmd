@@ -16,9 +16,16 @@ jupyter: python3
 Random forests are a popular supervised machine learning algorithm.
 
 Random forests are for supervised machine learning, where there is a labeled target variable.
+
 Random forests can be used for solving regression (numeric target variable) and classification (categorical target variable) problems.
+
 Random forests are an ensemble method, meaning they combine predictions from other models.
+
 Each of the smaller models in the random forest ensemble is a decision tree.
+
+In the following example we apply random forests and linear regression on the Temperature dataset.
+
+Note that the dataset is stored in the temps.csv file, which is also uploaded to our Github repository.
 
 ```{python}
 # Pandas is used for data manipulation
@@ -130,3 +137,4 @@ predictions = reg.predict(test_important)
 show_plot(features,feature_list,test_features,labels,predictions,test_labels)
 ```
 
+The results show that both LinearRegression and Random forests can reach a good performance. 

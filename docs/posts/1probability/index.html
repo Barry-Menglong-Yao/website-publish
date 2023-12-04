@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Probability theory, a branch of mathematics concerned with the analysis of random phenomena. The outcome of a random event cannot be determined before it occurs, but it may be any one of several possible outcomes. The actual outcome is considered to be determined by chance.</p>
 <p>A random variable is a variable whose value is unknown or a function that assigns values to each of an experiment’s outcomes. Random variables are often designated by letters and can be classified as discrete, which are variables that have specific values, or continuous, which are variables that can have any values within a continuous range.</p>
-<p>Let’s take an example of the coin flips. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. So now we flip our coin 100 times, and we want to answer some questions. What is the probability of getting heads over these 100 times? Will the probability change when we flip from 1 time to 100 times?</p>
+<p>Let’s take an example of the coin flips to show basic probability theory and random variables. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. So now we flip our coin 1000 times, and we want to answer some questions. What is the probability of getting heads over these 1000 times? Will the probability change when we flip from 1 time to 1000 times?</p>
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Based on the above figure <a href="#fig-coin">Figure&nbsp;1</a>, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.5.</p>
+<p>Based on the above figure <a href="#fig-coin">Figure&nbsp;1</a>, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to the expected probability 0.5.</p>
 <p>Then next question we want to explore is that: What if we do some tricks to make the head side of coin heavier than the tail side of coin? In this case, let us assume head side of coin is 7 grams while the tail side is 3 grams.</p>
 <div class="cell" data-execution_count="2">
 <details>
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.7.</p>
+<p>Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to the expected probability 0.7.</p>
 
 
 <!-- -->
@@ -532,8 +532,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>A random variable is a variable whose value is unknown or a function that assigns values to each of an experiment's outcomes. Random variables are often designated by letters and can be classified as discrete, which are variables that have specific values, or continuous, which are variables that can have any values within a continuous range.</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>Let’s take an example of the coin flips. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. </span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>So now we flip our coin 100 times, and we want to answer some questions. What is the probability of getting heads over these 100 times? Will the probability change when we flip from 1 time to 100 times?</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>Let’s take an example of the coin flips to show basic probability theory and random variables. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>So now we flip our coin 1000 times, and we want to answer some questions. What is the probability of getting heads over these 1000 times? Will the probability change when we flip from 1 time to 1000 times?</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
@@ -564,7 +564,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>plot_probability_change(probabilities)</span>
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>Based on the above figure @fig-coin, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.5.</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>Based on the above figure @fig-coin, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to the expected probability 0.5.</span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>Then next question we want to explore is that: What if we do some tricks to make the head side of coin heavier than the tail side of coin? In this case, let us assume head side of coin is 7 grams while the tail side is 3 grams.</span>
 <span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
@@ -595,7 +595,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>plot_probability_change(probabilities)</span>
 <span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.7. </span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to the expected probability 0.7. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

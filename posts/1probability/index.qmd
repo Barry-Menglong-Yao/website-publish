@@ -18,8 +18,8 @@ Probability theory, a branch of mathematics concerned with the analysis of rando
 
 A random variable is a variable whose value is unknown or a function that assigns values to each of an experiment's outcomes. Random variables are often designated by letters and can be classified as discrete, which are variables that have specific values, or continuous, which are variables that can have any values within a continuous range.
 
-Let’s take an example of the coin flips. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. 
-So now we flip our coin 100 times, and we want to answer some questions. What is the probability of getting heads over these 100 times? Will the probability change when we flip from 1 time to 100 times?
+Let’s take an example of the coin flips to show basic probability theory and random variables. We’ll start with flipping a coin and finding out the probability. We’ll use H for ‘heads’ and T for ‘tails’. 
+So now we flip our coin 1000 times, and we want to answer some questions. What is the probability of getting heads over these 1000 times? Will the probability change when we flip from 1 time to 1000 times?
 
 
 ```{python}
@@ -50,7 +50,7 @@ probabilities = simulate_coin_flips(num_flips)
 plot_probability_change(probabilities)
 ```
 
-Based on the above figure @fig-coin, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.5.
+Based on the above figure @fig-coin, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to the expected probability 0.5.
 
 Then next question we want to explore is that: What if we do some tricks to make the head side of coin heavier than the tail side of coin? In this case, let us assume head side of coin is 7 grams while the tail side is 3 grams.
 
@@ -81,5 +81,5 @@ probabilities = simulate_coin_flips(num_flips)
 plot_probability_change(probabilities)
 ```
 
-Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.7. 
+Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to the expected probability 0.7. 
 

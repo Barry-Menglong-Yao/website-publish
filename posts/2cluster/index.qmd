@@ -17,6 +17,8 @@ Clustering is a set of techniques used to partition data into groups, or cluster
 
 The k-means clustering method is an unsupervised machine learning technique used to identify clusters of data objects in a dataset. There are many different types of clustering methods, but k-means is one of the oldest and most approachable. These traits make implementing k-means clustering in Python reasonably straightforward, even for novice programmers and data scientists.
 
+In the following example, we use a simple toy dataset to visualize k-means and DBSCAN algorithms. make_moons() function produces two interleaving half circles.
+
 ```{python}
 import matplotlib.pyplot as plt
 from kneed import KneeLocator
@@ -74,3 +76,4 @@ ax2.set_title(
 plt.show()
 ```
 
+We can find that the k-means can cluster them into two groups while DBSCAN has a slightly better performance.
