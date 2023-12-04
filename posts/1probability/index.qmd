@@ -1,0 +1,75 @@
+---
+title: Probability theory and random variables
+author: Barry Menglong Yao
+date: '2023-11-29'
+format:
+  html:
+    code-fold: false
+categories:
+  - news
+  - code
+  - analysis
+image: image.jpg
+jupyter: python3
+---
+
+```{python}
+#| label: fig-coin
+#| fig-cap: flip coins
+import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_coin_flips(num_flips):
+    outcomes = np.random.choice(['Heads', 'Tails'], size=num_flips)
+    head_count = np.cumsum(outcomes == 'Heads')
+    probabilities = head_count / np.arange(1, num_flips + 1)
+    return probabilities
+
+def plot_probability_change(probabilities):
+    plt.plot(probabilities)
+    plt.title('Probability of Getting Heads over 100 Coin Flips')
+    plt.xlabel('Number of Flips')
+    plt.ylabel('Probability')
+    plt.axhline(0.5, color='red', linestyle='--', label='Expected Probability (0.5)')
+    plt.legend()
+    plt.show()
+
+# Simulate coin flips and plot the results
+num_flips = 1000
+probabilities = simulate_coin_flips(num_flips)
+plot_probability_change(probabilities)
+```
+
+Based on the above figure @fig-coin, we can find that at the early stage, the probability of getting heads may be 0.3, 0.6 or something else. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.5.
+
+Then next question we want to explore is that: What if we do some tricks to make the head side of coin heavier than the tail side of coin? In this case, let us assume head side of coin is 7 grams while the tail side is 3 grams.
+
+```{python}
+#| label: fig-coin2
+#| fig-cap: flip coins
+import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_coin_flips(num_flips):
+    outcomes = np.random.choice(['Heads', 'Tails'], size=num_flips,p=[0.7,0.3])
+    head_count = np.cumsum(outcomes == 'Heads')
+    probabilities = head_count / np.arange(1, num_flips + 1)
+    return probabilities
+
+def plot_probability_change(probabilities):
+    plt.plot(probabilities)
+    plt.title('Probability of Getting Heads over 100 Coin Flips')
+    plt.xlabel('Number of Flips')
+    plt.ylabel('Probability')
+    plt.axhline(0.7, color='red', linestyle='--', label='Expected Probability (0.5)')
+    plt.legend()
+    plt.show()
+
+# Simulate coin flips and plot the results
+num_flips = 3000
+probabilities = simulate_coin_flips(num_flips)
+plot_probability_change(probabilities)
+```
+
+Again, we can find that at the early stage, the probability of getting heads may be something random. However, when we flip coins for more and more times, the probability will be converged to about the expected probability 0.7. 
+
