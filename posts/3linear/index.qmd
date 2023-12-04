@@ -1,5 +1,5 @@
 ---
-title: "Probability theory and random variables    "
+title: "Linear and nonlinear regression   "
 author: "Barry Menglong Yao"
 date: "2023-12-03"
 categories: [news, code, analysis]
