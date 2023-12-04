@@ -10,5 +10,20 @@
   },
   "posts/welcome/index.qmd": {
     "index.html": "a02c58fa"
+  },
+  "posts/1probability/index.qmd": {
+    "index.html": "801caec8"
+  },
+  "posts/2cluster/index.qmd": {
+    "index.html": "73277e82"
+  },
+  "posts/3linear/index.qmd": {
+    "index.html": "b5aae676"
+  },
+  "posts/4classification/index.qmd": {
+    "index.html": "d9c3b356"
+  },
+  "posts/5detection/index.qmd": {
+    "index.html": "6e8f55ea"
   }
 }
