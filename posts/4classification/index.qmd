@@ -1,9 +1,96 @@
 ---
-title: "Classification"
-author: "Barry Menglong Yao"
-date: "2023-12-04"
-categories: [news, code, analysis]
-image: "image.jpg"
+title: Linear and nonlinear regression
+author: Barry Menglong Yao
+date: '2023-11-29'
+format:
+  html:
+    code-fold: false
+categories:
+  - news
+  - code
+  - analysis
+jupyter: python3
 ---
 
-This is a post with executable code.
+Random forests are a popular supervised machine learning algorithm.
+
+Random forests are for supervised machine learning, where there is a labeled target variable.
+Random forests can be used for solving regression (numeric target variable) and classification (categorical target variable) problems.
+Random forests are an ensemble method, meaning they combine predictions from other models.
+Each of the smaller models in the random forest ensemble is a decision tree.
+
+Imagine you have a complex problem to solve, and you gather a group of experts from different fields to provide their input. Each expert provides their opinion based on their expertise and experience. Then, the experts would vote to arrive at a final decision.
+
+In a random forest classification, multiple decision trees are created using different random subsets of the data and features. Each decision tree is like an expert, providing its opinion on how to classify the data. Predictions are made by calculating the prediction for each decision tree, then taking the most popular result. (For regression, predictions use an averaging technique instead.)
+
+The Dataset:
+This dataset consists of direct marketing campaigns by a Portuguese banking institution using phone calls. The campaigns aimed to sell subscriptions to a bank term deposit. We are going to store this dataset in a variable called bank_data.
+
+The columns we will use are:
+
+age: The age of the person who received the phone call
+default: Whether the person has credit in default
+cons.price.idx: Consumer price index score at the time of the call
+cons.conf.idx:Consumer confidence index score at the time of the call
+y: Whether the person subscribed (this is what we’re trying to predict)
+
+```{python}
+#| vscode: {languageId: python}
+from ucimlrepo import fetch_ucirepo 
+import pandas as pd
+import numpy as np
+import sklearn
+from scipy.stats import randint
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, ConfusionMatrixDisplay
+from sklearn.tree import export_graphviz
+from IPython.display import Image
+import graphviz
+from sklearn.model_selection import RandomizedSearchCV, train_test_split
+  
+# fetch dataset 
+bank_marketing = fetch_ucirepo(id=222) 
+# alternatively: fetch_ucirepo(name='Heart Disease')
+
+  
+# data (as pandas dataframes) 
+df_X = bank_marketing.data.features 
+df_y = bank_marketing.data.targets 
+```
+
+```{python}
+#| vscode: {languageId: python}
+X = df_X.loc[:,['age','default','balance']]
+X['default'] = X['default'].map({'no':0,'yes':1,'unknown':0})
+df_y["y"]=df_y["y"].map({'no':0,'yes':1})
+y=df_y.loc[:,['y']]
+ 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+```
+
+```{python}
+#| vscode: {languageId: python}
+rf = RandomForestClassifier()
+rf.fit(X_train, y_train)
+y_pred = rf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+# Create the confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+ConfusionMatrixDisplay(confusion_matrix=cm).plot()
+```
+
+LinearRegression fits a linear model with coefficients w = (w1, …, wp) to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.
+
+```{python}
+#| vscode: {languageId: python}
+lm=sklearn.linear_model.LinearRegression()
+rf.fit(X_train, y_train)
+y_pred = rf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+# Create the confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+ConfusionMatrixDisplay(confusion_matrix=cm).plot()
+```
+
