@@ -1,0 +1,70 @@
+---
+title: Anomaly/outlier detection
+author: Barry Menglong Yao
+date: '2023-11-29'
+format:
+  html:
+    code-fold: false
+categories:
+  - news
+  - code
+  - analysis
+jupyter: python3
+---
+
+Anomalies are data points in a dataset that are different from the normal state of existence and contradict the data’s expected behavior. Anomalies in data are also called standard deviations, outliers, noise, novelties, and exceptions.
+
+There are three types of anomalies:
+
+Point anomalies: It is when a single instance of data is anomalous.
+
+Contextual anomalies: It is when the abnormality is context-specific. It is common in time-series data.
+
+Collective anomalies: It is when a set of data instances collectively helps in detecting anomalies.
+
+In machine learning and data mining, anomaly detection is the task of identifying the rare items, events or observations which are suspicious and seem different from the majority of the data. These anomalies can indicate some kind of problems such as bank fraud, medical problems, failure of industrial equipment, etc.
+
+Local Outlier Factor:
+A local outlier factor is an algorithm that is used to find anomalous data points by measuring the local deviation of a given data point with respect to its neighbors.
+
+The local outlier factor algorithm considers the distances of K-nearest neighbor's from a core point to estimate the density. By comparing the local density of an object to the local densities of its neighbor’s, the regions of similar density and points that have a substantially lower density than their neighbor's can be identified. These points are considered outliers by the algorithm. This is how the anomalies are detected by using this algorithm. 
+
+In the following example, we apply it on a real-world dataset. The dataset considered here contains information on 25 different features of Credit card payment defaults.
+
+```{python}
+# Import pandas
+import pandas as pd
+
+# Load the data
+data = pd.read_csv('https://raw.githubusercontent.com/analyticsindiamagazine/MocksDatasets/main/Credit_Card.csv')
+
+# Top 5 rows
+data.head()
+```
+
+```{python}
+# Import IF and LOF
+from sklearn.ensemble import IsolationForest
+from sklearn.neighbors import LocalOutlierFactor
+import matplotlib.pyplot as plt
+X=data[list(data.columns)] 
+# Initialize and train LOF
+LOF = LocalOutlierFactor()
+LOF.fit(X)
+# Anomalies given by the LOF
+LOF_anomalies = LOF.fit_predict(X)
+
+```
+
+```{python}
+
+# Plotting anomalies given by LOF
+plt.figure(figsize=(8,6))
+plt.hist(X["AGE"],label='Normal')
+plt.hist(X[LOF_anomalies==-1]["AGE"], color='red', label='Anomalies')
+plt.xlabel('Age of the customers')
+plt.ylabel('Frequency')
+plt.ylim((0,6000))
+plt.legend()
+```
+
