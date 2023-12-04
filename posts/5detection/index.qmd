@@ -1,6 +1,6 @@
 ---
-title: "Post With Code"
-author: "Harlow Malloc"
+title: "Anomaly/outlier detection  "
+author: "Barry Menglong Yao"
 date: "2023-12-03"
 categories: [news, code, analysis]
 image: "image.jpg"

@@ -1,6 +1,6 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+title: "Clustering"
+author: "Barry Menglong Yao"
 date: "2023-11-30"
 categories: [news]
 ---

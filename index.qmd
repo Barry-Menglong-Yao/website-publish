@@ -1,5 +1,5 @@
 ---
-title: "course good"
+title: "homework for CS_5805"
 listing:
   contents: posts
   sort: "date desc"
