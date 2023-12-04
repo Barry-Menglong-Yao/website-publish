@@ -57,6 +57,17 @@ LOF_anomalies = LOF.fit_predict(X)
 
 ```
 
+
+```{python}
+# import matplotlib
+import matplotlib.pyplot as plt
+# See how data is spreaded
+plt.figure(figsize=(8,6))
+plt.hist(X["AGE"])
+plt.xlabel('Age')
+plt.ylabel('Frequency of datapoints')
+```
+
 ```{python}
 
 # Plotting anomalies given by LOF
