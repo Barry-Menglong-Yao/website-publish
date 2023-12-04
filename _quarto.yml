@@ -11,6 +11,8 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
+  repo-url: https://github.com/Barry-Menglong-Yao/website-publish
+  repo-actions: [edit, issue]
 format:
   html:
     theme: cosmo

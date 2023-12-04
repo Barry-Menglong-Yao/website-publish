@@ -1,10 +1,11 @@
 ---
-title: Anomaly/outlier detection
+title: 5. Anomaly/outlier detection
 author: Barry Menglong Yao
 date: '2023-11-29'
 format:
   html:
-    code-fold: false
+    code-fold: true
+    code-tools: true
 categories:
   - news
   - code
